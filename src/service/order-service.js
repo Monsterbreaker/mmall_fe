@@ -53,6 +53,7 @@ var _order = {
             data: {
                 orderNo: orderNo
             },
+            method:'POST',
             success: resolve,
             error: reject,
         });

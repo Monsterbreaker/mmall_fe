@@ -18,6 +18,7 @@
             </a>
             </span>
             <span class="order-text">{{createTime}}</span>
+            <span class="order-text">商家:{{sellerName}}</span>
             <span class="order-text">收件人:{{receiverName}}</span>
             <span class="order-text">订单状态:{{statusDesc}}</span>
             <span class="order-text">

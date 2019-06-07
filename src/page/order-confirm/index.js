@@ -79,9 +79,11 @@ var page = {
             var shippingId = _this.data.selectedAddressId;
             if (shippingId) {
                 _order.createOrder({
-                    shippingId: shippingId
+                    shipping_id: shippingId
                 }, function(res) {
-                    window.location.href = './payment.html?orderNo=' + res.orderNo;
+                    // window.location.href = './payment.html?orderNo=' + res.orderNo;
+                    alert("提交成功！请尽快至订单中心支付!");
+                    window.location='./order-list.html';
                 }, function(errMsg) {
                     _util.errorTips(errMsg);
                 });

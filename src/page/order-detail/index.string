@@ -9,6 +9,9 @@
                 <span class="text">创建时间:{{createTime}}</span>
             </div>
             <div class="text-line">
+                <span class="text">商家:{{sellerName}}</span>
+            </div>
+            <div class="text-line">
                 <span class="text">收件人:{{receiverName}}
                     {{shippingVo.receiverProvince}}
                     {{shippingVo.receiverCity}}
