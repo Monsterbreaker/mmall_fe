@@ -68,7 +68,7 @@ var page = {
             // 表单验证结果
             validateResult = this.formValidate(formData);
         // 验证成功
-        if(validateResult.status){
+        if(validateResult.code){
             _user.register(formData, function(res){
                 window.location.href = './result.html?type=register';
             }, function(errMsg){
@@ -85,7 +85,7 @@ var page = {
     // 表单字段的验证
     formValidate : function(formData){
         var result = {
-            status  : false,
+            code  : false,
             msg     : ''
         };
         // 验证用户名是否为空
@@ -129,7 +129,7 @@ var page = {
             return result;
         }
         // 通过验证，返回正确提示
-        result.status   = true;
+        result.code   = true;
         result.msg      = '验证通过';
         return result;
     }

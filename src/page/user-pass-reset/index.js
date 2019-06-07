@@ -87,7 +87,7 @@ var page = {
                 // 检查密码提示问题答案
                 _user.resetPassword({
                     username        : _this.data.username,
-                    passwordNew     : password,
+                    newPassword     : password,
                     forgetToken     : _this.data.token
                 }, function(res){
                     window.location.href = './result.html?type=pass-reset';

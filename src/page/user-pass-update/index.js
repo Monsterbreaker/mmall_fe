@@ -38,8 +38,8 @@ var page = {
             if(validateResult.status){
                 // 更改用户密码
                 _user.updatePassword({
-                    passwordOld : userInfo.password,
-                    passwordNew : userInfo.passwordNew
+                    oldPassword : userInfo.password,
+                    newPassword : userInfo.passwordNew
                 }, function(res, msg){
                     _mm.successTips(msg);
                 }, function(errMsg){

@@ -6,9 +6,9 @@
 */
 
 'use strict';
-var Hogan = require('hogan');
+var Hogan = require('hogan.js');
 var conf = {
-    serverHost : ''
+    serverHost : 'http://localhost:8080'
 };
 var _mm = {
     // 网络请求
@@ -21,20 +21,20 @@ var _mm = {
             data        : param.data    || '',
             success     : function(res){
                 // 请求成功
-                if(0 === res.status){
+                if(0 === res.code){
                     typeof param.success === 'function' && param.success(res.data, res.msg);
                 }
                 // 没有登录状态，需要强制登录
-                else if(10 === res.status){
+                else if(10 === res.code){
                     _this.doLogin();
                 }
                 // 请求数据错误
-                else if(1 === res.status){
+                else if(1 === res.code){
                     typeof param.error === 'function' && param.error(res.msg);
                 }
             },
             error       : function(err){
-                typeof param.error === 'function' && param.error(err.statusText);
+                typeof param.error === 'function' && param.error(err.codeText);
             }
         });
     },

@@ -13,7 +13,7 @@ var _user = {
     // 用户登录
     login : function(userInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/login.do'),
+            url     : _mm.getServerUrl('/user/customer_login.do'),
             data    : userInfo,
             method  : 'POST',
             success : resolve,
@@ -36,7 +36,7 @@ var _user = {
     // 用户注册
     register : function(userInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/register.do'),
+            url     : _mm.getServerUrl('/user/customer_register.do'),
             data    : userInfo,
             method  : 'POST',
             success : resolve,
@@ -46,8 +46,8 @@ var _user = {
     // 检查登录状态
     checkLogin : function(resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/get_user_info.do'),
-            method  : 'POST',
+            url     : _mm.getServerUrl('/user/info.do'),
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -55,11 +55,11 @@ var _user = {
     // 获取用户密码提示问题
     getQuestion : function(username, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/forget_get_question.do'),
+            url     : _mm.getServerUrl('/user/question.do'),
             data    : {
                 username : username
             },
-            method  : 'POST',
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -67,7 +67,7 @@ var _user = {
     // 检查密码提示问题答案
     checkAnswer : function(userInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/forget_check_answer.do'),
+            url     : _mm.getServerUrl('/user/answer_check.do'),
             data    : userInfo,
             method  : 'POST',
             success : resolve,
@@ -77,7 +77,7 @@ var _user = {
     // 重置密码
     resetPassword : function(userInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/forget_reset_password.do'),
+            url     : _mm.getServerUrl('/user/password_reset.do'),
             data    : userInfo,
             method  : 'POST',
             success : resolve,
@@ -87,8 +87,8 @@ var _user = {
     // 获取用户信息
     getUserInfo : function(resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/get_information.do'),
-            method  : 'POST',
+            url     : _mm.getServerUrl('/user/info.do'),
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
@@ -96,7 +96,7 @@ var _user = {
     // 更新个人信息
     updateUserInfo : function(userInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/update_information.do'),
+            url     : _mm.getServerUrl('/user/info_modify.do'),
             data    : userInfo,
             method  : 'POST',
             success : resolve,
@@ -106,7 +106,7 @@ var _user = {
     // 登录状态下更新密码
     updatePassword : function(userInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/reset_password.do'),
+            url     : _mm.getServerUrl('/user/password_modify.do'),
             data    : userInfo,
             method  : 'POST',
             success : resolve,
@@ -117,7 +117,7 @@ var _user = {
     logout : function(resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/user/logout.do'),
-            method  : 'POST',
+            method  : 'GET',
             success : resolve,
             error   : reject
         });
