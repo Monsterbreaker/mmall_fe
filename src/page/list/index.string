@@ -8,8 +8,11 @@
         <div class="p-price-con">
             <span class="p-price">￥{{price}}</span>
         </div>
+        <div class="p-price-con">
+            <span class="p-name">{{sellerName}}</span>
+        </div>
         <div class="p-name-con">
-            <a class="p-name" href="./detail.html?productId={{id}}" target="_blank">{{name}}</a>
+            <a class="p-name" href="./detail.html?productId={{id}}" target="_blank">{{subtitle}}</a>
         </div>
     </li>
 {{/list}}

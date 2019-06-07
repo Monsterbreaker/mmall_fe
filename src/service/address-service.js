@@ -25,6 +25,7 @@ var _address = {
         _util.request({
             url: _util.getServerUrl('/shipping/add.do'),
             data:addressInfo,
+            method  : 'POST',
             success: resolve,
             error: reject,
         });
@@ -34,6 +35,7 @@ var _address = {
         _util.request({
             url: _util.getServerUrl('/shipping/update.do'),
             data:addressInfo,
+            method  : 'POST',
             success: resolve,
             error: reject,
         });
