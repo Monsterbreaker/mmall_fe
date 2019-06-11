@@ -23,12 +23,10 @@ var _user = {
     // 检查用户名
     checkUsername : function(username, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/check_valid.do'),
+            url     : _mm.getServerUrl('/user/username_check.do'),
             data    : {
-                type    : 'username',
-                str     : username
+                username : username
             },
-            method  : 'POST',
             success : resolve,
             error   : reject
         });
